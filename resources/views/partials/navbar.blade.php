@@ -6,9 +6,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#">Produk</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Tentang Kami</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Kontak</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('product') }}">Produk</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">Tentang Kami</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Kontak</a></li>
                 <li class="nav-item"><a class="nav-link btn btn-outline-primary" href="#">Login</a></li>
             </ul>
         </div>

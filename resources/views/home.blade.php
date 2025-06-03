@@ -6,7 +6,7 @@
 <div class="bg-light p-5 rounded text-center">
     <h1 class="display-4">Kirim Bunga Spesial untuk Orang Tersayang</h1>
     <p class="lead">Pesan bunga segar dan indah langsung dari toko kami!</p>
-    <a href="#" class="btn btn-primary btn-lg">Lihat Katalog</a>
+    <a href="{{ route ('product') }}" class="btn btn-primary btn-lg">Lihat Katalog</a>
 </div>
 
 <!-- Kategori -->
