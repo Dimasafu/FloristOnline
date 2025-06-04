@@ -26,6 +26,7 @@ class CartSeeder extends Seeder
                 'total' => $faker->randomFloat(2, 1000, 100000), // Random total between 1000 and 100000
                 'created_at' => now(),
                 'updated_at' => now(),
+            ]);
         }
     }
 }

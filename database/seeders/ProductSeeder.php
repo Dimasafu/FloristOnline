@@ -15,7 +15,7 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
-        $image = ['freshflower1.jpg', 'freshflower2.jpg', 'freshflower3.jpg', 'freshflower4.jpg', 'freshflower5.jpg'];
+        $images = ['freshflower1.jpg', 'freshflower2.jpg', 'freshflower3.jpg', 'freshflower4.jpg', 'freshflower5.jpg'];
 
         foreach (range(1, 50) as $i) {
             \DB::table('products')->insert([
