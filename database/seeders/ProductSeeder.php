@@ -15,6 +15,7 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
         $faker = Faker::create();
+        $image = ['freshflower1.jpg', 'freshflower2.jpg', 'freshflower3.jpg', 'freshflower4.jpg', 'freshflower5.jpg'];
 
         foreach (range(1, 50) as $i) {
             \DB::table('products')->insert([
@@ -23,7 +24,9 @@ class ProductSeeder extends Seeder
                 'description' => $faker->sentence,
                 'stock' => rand(1, 100),
                 'price' => $faker->randomFloat(2, 1000, 100000), // Price between 5 and 1000
-                'image' => $faker->imageUrl(),
+                'image' => 'images/products/' . $images[array_rand($images)], // path relatif ke public
+                'created_at' => now(),
+                'updated_at' => now(),
             ]);
         }
     }

@@ -24,7 +24,8 @@ class CartSeeder extends Seeder
                 'product_id' => rand(1, 50), // Assuming you have 50 products
                 'quantity' => rand(1, 5), // Random quantity between 1 and 5
                 'total' => $faker->randomFloat(2, 1000, 100000), // Random total between 1000 and 100000
-            ]);
+                'created_at' => now(),
+                'updated_at' => now(),
         }
     }
 }
