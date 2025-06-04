@@ -6,7 +6,7 @@
 <div class="bg-light p-5 rounded text-center">
     <h1 class="display-4">Kirim Bunga Spesial untuk Orang Tersayang</h1>
     <p class="lead">Pesan bunga segar dan indah langsung dari toko kami!</p>
-    <a href="{{ route ('product') }}" class="btn btn-primary btn-lg">Lihat Katalog</a>
+    <a href="{{ route ('product.index') }}" class="btn btn-primary btn-lg">Lihat Katalog</a>
 </div>
 
 <!-- Kategori -->
@@ -20,19 +20,26 @@
 
 <!-- Produk Unggulan -->
 <h2 class="mt-5">Produk Terbaru</h2>
+<div class="text-end mt-3">
+    <a href="{{ route('product.index') }}">Lihat Produk Lain</a>
+</div>
 <div class="row">
-    @for($i = 0; $i < 4; $i++)
+    @forelse ($latestProducts as $product)
     <div class="col-md-3">
         <div class="card mb-4">
-            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Bunga">
+            <img src="{{ $product->image }}" class="card-img-top" alt="{{ $product->name }}">
             <div class="card-body">
-                <h5 class="card-title">Nama Produk</h5>
-                <p class="card-text">Rp 150.000</p>
+                <h5 class="card-title">{{ $product->name }}</h5>
+                <p class="card-text">Rp {{ number_format($product->price, 0, ',', '.') }}</p>
                 <a href="#" class="btn btn-sm btn-success">Beli</a>
             </div>
         </div>
     </div>
-    @endfor
+    @empty
+    <p class="text-center">Belum ada produk tersedia.</p>
+    @endforelse
 </div>
+
+
 
 @endsection
