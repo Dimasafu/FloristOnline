@@ -26,8 +26,8 @@
 <div class="row">
     @forelse ($latestProducts as $product)
     <div class="col-md-3">
-        <div class="card mb-4">
-            <img src="{{ asset($product->image) }}" class="img-fluid " alt="{{ $product->name }}">
+        <div class="card mb-4 mt-2 shadow-sm">
+            <img src="{{ asset($product->image) }}" class="img-fluid" style="height: 200px; object-fit: contain; max-width: 100%;" alt="{{ $product->name }}">
             <div class="card-body">
                 <h5 class="card-title">{{ $product->name }}</h5>
                 <p class="card-text">{{ $product->description }}</p>
