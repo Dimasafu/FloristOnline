@@ -16,14 +16,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home'); // atau bisa pakai controller kalau kamu mau
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/checkout', [HomeController::class, 'checkout'])->name('checkout');
 Route::get('/cart', [HomeController::class, 'cart'])->name('cart');
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/product', [ProductController::class, 'index'])->name('product.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

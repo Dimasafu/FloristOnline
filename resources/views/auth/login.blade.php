@@ -1,3 +1,4 @@
+{{--
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -45,3 +46,27 @@
         </div>
     </form>
 </x-guest-layout>
+--}}
+@extends('layouts.auth')
+
+@section('content')
+<div class="w-75">
+    <h2 class="mb-4">Selamat Datang Kembali!</h2>
+    <form method="POST" action="{{ route('login') }}">
+        @csrf
+        <div class="mb-3">
+            <label>Email</label>
+            <input type="email" name="email" class="form-control" required autofocus>
+        </div>
+        <div class="mb-3">
+            <label>Password</label>
+            <input type="password" name="password" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Masuk</button>
+    </form>
+    <hr>
+    <p class="text-center">Belum punya akun? <a href="{{ route('register') }}">Daftar di sini</a></p>
+</div>
+@endsection
+
+</html>

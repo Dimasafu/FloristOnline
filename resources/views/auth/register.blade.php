@@ -1,3 +1,4 @@
+{{--
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
@@ -50,3 +51,34 @@
         </div>
     </form>
 </x-guest-layout>
+--}}
+@extends('layouts.auth')
+
+@section('content')
+<div class="w-75">
+    <h2 class="mb-4">Daftar Akun Baru</h2>
+    <form method="POST" action="{{ route('register') }}">
+        @csrf
+        <div class="mb-3">
+            <label>Nama</label>
+            <input type="text" name="name" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Email</label>
+            <input type="email" name="email" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Password</label>
+            <input type="password" name="password" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label>Konfirmasi Password</label>
+            <input type="password" name="password_confirmation" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Daftar</button>
+    </form>
+    <hr>
+    <p class="text-center">Sudah punya akun? <a href="{{ route('login') }}">Masuk di sini</a></p>
+</div>
+@endsection
+
